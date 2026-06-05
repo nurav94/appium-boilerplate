@@ -1,0 +1,10 @@
+# Appium Mobile Automation Boilerplate
+A production-ready, cross-platform mobile test automation framework.
+
+## Key Technical Details
+- Language: Java 11 / 17+
+- Frameworks: Appium (W3C Actions API), TestNG, Maven
+- Parallel Execution: ThreadLocal-managed AppiumDriver instances for multi-device execution.
+- Design Pattern: Page Object Model (POM) with PageFactory.
+- Reporting: Allure Reports with automated screenshots, video attachments, and Logcat captures on failure.
+- Utilities: Excel data-driven reading, property-file configuration.

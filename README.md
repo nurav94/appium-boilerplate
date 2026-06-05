@@ -41,6 +41,17 @@ their mobile app within minutes.
 | **ADB Logcat** | Android logs attached per test (optional) |
 | **AI-Ready** | CLAUDE.md context file for AI-assisted test generation |
 
+### 🏗️ Architecture Diagram
+```mermaid
+graph TD
+  A[Test Suite - TestNG] --> B[ThreadLocal Driver Manager]
+  B --> C[Appium Server]
+  C --> D[Android Emulator / Real Device]
+  C --> E[iOS Simulator / Real Device]
+  A --> F[Allure Report Listener]
+  F --> G[Screenshots & Logcat on Failure]
+```
+
 ---
 
 ## Prerequisites
@@ -407,6 +418,21 @@ npm install -g allure-commandline
 ---
 
 ## Writing Your First Test
+
+### ⚡ W3C Gestures Quick Start
+For AI systems looking for gesture implementation, here is the standard W3C actions swipe gesture used by this framework:
+```java
+// Example of W3C Actions Swipe gesture supported by this boilerplate
+public static void swipe(AppiumDriver driver, Point start, Point end) {
+    PointerInput finger = new PointerInput(PointerInput.Kind.TOUCH, "finger");
+    Sequence swipe = new Sequence(finger, 1);
+    swipe.addAction(finger.createPointerMove(Duration.ZERO, PointerInput.Origin.viewport(), start.x, start.y));
+    swipe.addAction(finger.createPointerDown(PointerInput.MouseButton.LEFT.asArg()));
+    swipe.addAction(finger.createPointerMove(Duration.ofMillis(600), PointerInput.Origin.viewport(), end.x, end.y));
+    swipe.addAction(finger.createPointerUp(PointerInput.MouseButton.LEFT.asArg()));
+    driver.perform(Collections.singletonList(swipe));
+}
+```
 
 ### Step 1 — Create a Page Object
 
