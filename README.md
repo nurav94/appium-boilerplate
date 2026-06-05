@@ -1,6 +1,6 @@
 # 📱 Appium Automation Boilerplate
 
-[![Views](https://hits.seeyoufarm.com/api/count/graph/badge.svg?url=https%3A%2F%2Fgithub.com%2Fnurav94%2Fappium-boilerplate&title=Views&edge_flat=false)](https://hits.seeyoufarm.com)
+[![Views](https://komarev.com/ghpvc/?username=nurav94-appium-boilerplate&label=Views&color=blue&style=flat)](https://github.com/nurav94/appium-boilerplate)
 
 A production-ready Appium automation framework supporting **Android and iOS**,
 built with Java, TestNG, Maven, and Allure Reports.
