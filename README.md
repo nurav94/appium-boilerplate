@@ -737,8 +737,8 @@ A: Update the `appium.version` property in pom.xml and run `mvn clean install -D
 
 **Varun R**
 Senior QA Automation Engineer | SDET | Automation Lead
-- LinkedIn: [Your LinkedIn]
-- GitHub: [Your GitHub]
+- LinkedIn: [Varun Kumar Rajamurugan](https://in.linkedin.com/in/varunkumar-rajamurugan-aa5273203)
+- GitHub: [nurav94](https://github.com/nurav94)
 
 ---
 
