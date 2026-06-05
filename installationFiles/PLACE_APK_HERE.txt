@@ -1,0 +1,12 @@
+Place your Android APK and/or iOS .app file in this folder.
+
+Examples:
+  installationFiles/app-debug.apk      ← Android
+  installationFiles/YourApp.app        ← iOS
+
+Then update config.properties:
+  android.appPath=installationFiles/app-debug.apk
+  ios.appPath=installationFiles/YourApp.app
+
+Note: This folder is in .gitignore — APK/IPA files are NOT committed to Git.
+Download the latest build from your CI/CD or ask your developer.

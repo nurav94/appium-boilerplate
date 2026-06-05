@@ -1,0 +1,28 @@
+# Maven target directory
+target/
+
+# Allure reports and results
+allure-results/
+allure-report/
+
+# IDE files and settings
+.idea/
+*.iml
+.vscode/
+.settings/
+.classpath
+.project
+
+# OS-specific temporary files
+.DS_Store
+Thumbs.db
+
+# Mobile Binaries (prevent pushing apps to git)
+installationFiles/*.apk
+installationFiles/*.app
+installationFiles/*.ipa
+installationFiles/*.zip
+
+# User-specific test data modifications
+TestData/*.xlsx
+!TestData/sample_data.xlsx

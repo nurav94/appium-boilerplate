@@ -1,0 +1,64 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<!--
+  Regression.xml — Full regression suite with parallel execution
+  Runs all tests across multiple devices simultaneously
+  Use: mvn test -DsuiteXmlFile=TestSuites/Regression.xml
+-->
+
+<suite name="Regression Suite" parallel="tests" thread-count="3" verbose="1">
+
+    <listeners>
+        <listener class-name="listeners.RetryListener"/>
+        <listener class-name="listeners.TestListener"/>
+    </listeners>
+
+    <!-- ─────────────────────────────────────────────────────
+         Device 1 — Android (thread 1)
+    ───────────────────────────────────────────────────────── -->
+    <test name="Android-Regression-Device1">
+        <parameter name="platform"    value="Android"/>
+        <parameter name="deviceName"  value="Pixel_5_API_33"/>
+        <parameter name="version"     value="13"/>
+        <parameter name="udid"        value="emulator-5554"/>
+
+        <classes>
+            <class name="tests.SampleTest"/>
+            <!-- <class name="tests.LoginTest"/> -->
+            <!-- <class name="tests.HomeTest"/> -->
+        </classes>
+    </test>
+
+    <!-- ─────────────────────────────────────────────────────
+         Device 2 — Android (thread 2)
+         Uncomment and set udid when you have a second emulator
+    ───────────────────────────────────────────────────────── -->
+    <!--
+    <test name="Android-Regression-Device2">
+        <parameter name="platform"    value="Android"/>
+        <parameter name="deviceName"  value="Pixel_6_API_34"/>
+        <parameter name="version"     value="14"/>
+        <parameter name="udid"        value="emulator-5556"/>
+        <classes>
+            <class name="tests.SampleTest"/>
+        </classes>
+    </test>
+    -->
+
+    <!-- ─────────────────────────────────────────────────────
+         Device 3 — iOS (thread 3)
+         Uncomment and configure when running on iOS
+    ───────────────────────────────────────────────────────── -->
+    <!--
+    <test name="iOS-Regression-Device1">
+        <parameter name="platform"    value="iOS"/>
+        <parameter name="deviceName"  value="iPhone 14"/>
+        <parameter name="version"     value="16"/>
+        <parameter name="udid"        value="YOUR_IOS_UDID_HERE"/>
+        <classes>
+            <class name="tests.SampleTest"/>
+        </classes>
+    </test>
+    -->
+
+</suite>

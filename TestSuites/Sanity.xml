@@ -1,0 +1,42 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<!--
+  Sanity.xml — Quick health check suite
+  Runs high-priority tests on a single device
+  Use: mvn test -DsuiteXmlFile=TestSuites/Sanity.xml
+-->
+
+<suite name="Sanity Suite" parallel="tests" thread-count="1" verbose="1">
+
+    <!-- Global listeners — applied to all tests in this suite -->
+    <listeners>
+        <listener class-name="listeners.RetryListener"/>
+        <listener class-name="listeners.TestListener"/>
+    </listeners>
+
+    <!-- ─────────────────────────────────────────────────────
+         Device 1 — Edit platform, deviceName, version, udid
+         to match your emulator or real device
+    ───────────────────────────────────────────────────────── -->
+    <test name="Android-Sanity-Device1">
+        <parameter name="platform"    value="Android"/>
+        <parameter name="deviceName"  value="Pixel_5_API_33"/>
+        <parameter name="version"     value="13"/>
+        <parameter name="udid"        value="emulator-5554"/>
+
+        <!-- Run only tests in the "sanity" group -->
+        <groups>
+            <run>
+                <include name="sanity"/>
+            </run>
+        </groups>
+
+        <classes>
+            <class name="tests.SampleTest"/>
+            <!-- Add more test classes here as your suite grows -->
+            <!-- <class name="tests.LoginTest"/> -->
+            <!-- <class name="tests.HomeTest"/> -->
+        </classes>
+    </test>
+
+</suite>
