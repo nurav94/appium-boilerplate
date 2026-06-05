@@ -1,5 +1,7 @@
 # 📱 Appium Automation Boilerplate
 
+[![Views](https://hits.seeyoufarm.com/api/count/graph/badge.svg?url=https%3A%2F%2Fgithub.com%2Fnurav94%2Fappium-boilerplate&title=Views&edge_flat=false)](https://hits.seeyoufarm.com)
+
 A production-ready Appium automation framework supporting **Android and iOS**,
 built with Java, TestNG, Maven, and Allure Reports.
 
@@ -60,7 +62,7 @@ You need the following installed **before** cloning this project.
 
 ### 1. Java Development Kit (JDK 11+)
 
-**Download:** https://adoptium.net
+**Download:** [Adoptium Temurin JDK (Recommended)](https://adoptium.net) or [Oracle JDK](https://www.oracle.com/java/technologies/downloads/)
 
 **Verify installation:**
 ```bash
@@ -199,7 +201,7 @@ Use this to find `resource-id`, `content-desc`, `xpath` values for your app's el
 
 ### Step 1 — Clone the repository
 ```bash
-git clone https://github.com/yourusername/appium-boilerplate.git
+git clone https://github.com/nurav94/appium-boilerplate.git
 cd appium-boilerplate
 ```
 
@@ -626,7 +628,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'main', url: 'https://github.com/you/appium-boilerplate.git'
+                git branch: 'main', url: 'https://github.com/nurav94/appium-boilerplate.git'
             }
         }
         stage('Run Tests') {
